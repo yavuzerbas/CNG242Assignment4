@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
-#include "Entity.h"
+#include "Entities.h"
 
-class Warriors : public Entity 
+class Warriors : public Entities
 {
 protected:
 	bool isDead;
@@ -12,7 +12,7 @@ protected:
 	int meleeDamage;
 	int shootDamage;
 public:
-	Warriors(int lifePoints, int ammunitions, int shootTimes, int meleeDamage, int shootDamage) {
+	Warriors(int lifePoints, int ammunitions, int shootTimes, int meleeDamage, int shootDamage) : Entities(1,'w') {
 		isDead = false; //each player is alive at the beginning
 		//using if else chains to avoid creating warriors with absurd properties
 		if (lifePoints >= 0) {
@@ -45,6 +45,12 @@ public:
 			this->shootDamage = 0;
 			std::cout << "\nInvalid shootDamege! It is set to 0 as default!\n\n";
 		}
+	}
+	float getSize() {
+		return this->size;
+	}
+	void setSize(int size) {
+		this->size = size;
 	}
 };
 

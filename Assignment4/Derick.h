@@ -8,5 +8,6 @@ public:
 	Derick(int lifePoints, int ammunitions, int shootTimes, int meleeDamage, int shootDamage) :
 		Warriors(lifePoints, ammunitions, shootTimes, meleeDamage, shootDamage) {
 	}//custom Derick
+
 };
 
